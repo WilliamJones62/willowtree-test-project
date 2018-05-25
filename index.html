@@ -204,17 +204,17 @@
       });
 
 
-      var render = function () {
+      function namegame() {
           React.renderComponent(
               <App people={people}/>,
               document.getElementById('app-wrapper')
           );
-      };
+      }
 
       // Fetch the data and start the app
       $.get('https://willowtreeapps.com/api/v1.0/profiles/').then(function(data) {
-          people = data.items;
-          render();
+          people = data;
+          namegame();
       });
 
       </script>
